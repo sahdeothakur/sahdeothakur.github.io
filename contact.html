@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Contact US</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+<title>Contact US</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -26,7 +30,7 @@
 									<li><a href="contact.html">Contact Us</a></li>
 									<li><a href="elements.html">Registration Forms</a></li>
 									<li>
-										<a href="#">NOTICE</a>
+										<a href="#">NOTICE	</a>
 										<ul>
 											<li><a href="#">Notice One</a></li>
 											<li><a href="#">Notice Two</a></li>
@@ -51,29 +55,107 @@
 						
 						<p><h3>Tell us what you think about our little operation.</h3></p>
 					</header>
-					<div class="box">
-						<form method="post" action="#">
-							<div class="row gtr-50 gtr-uniform">
-								<div class="col-6 col-12-mobilep">
-									<input type="text" name="name" id="name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-mobilep">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
-								</div>
-								<div class="col-12">
-									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions special">
-										<li><input type="submit" value="Send Message" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</div>
+				<!-- Start Contact Section -->
+ <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+  <div class="w3-content" style="max-width:600px">
+    <h4 class="w3-center"><b>Contact Us</b></h4>
+
+    <script type="text/javascript">var submitted=false;</script>
+    
+    <!--Update the URL for thank you page on form submit -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
+    onload="if(submitted) {window.location='http://sahdeothakur.github.io/thankyou.html';}"></iframe> 
+    
+    <!-- Update the Google forms URL in action-->
+    <form action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSepb4dSqFAblDZcpbRey3spc3Isy6_GC6E95tPLE_iuD-LndA/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+
+      
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter your Name here" id="name" required name="entry.990544886">
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter you Email here" id="email" required name="entry.7570102">
+      </div>
+      <div class="w3-section">
+        <label>Subject</label>
+        <input class="w3-input w3-border" type="text" placeholder="On what subject you want to write" id="subject" required name="entry.414810982">
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter your whole Message" id="messege" rows="6" required name="entry.86603991">
+      </div>
+
+      <div class="w3-section">
+        <button class="w3-button w3-block w3-black w3-margin-bottom" type="submit">SEND</button>
+      </div>
+    </form>
+</div>
+</div>
+    <script type="text/javascript">
+    function validateName() {
+            var name = document.getElementById('name').value;
+            if(name.length == 0) {
+              alert("Name can't be blank") ;
+              return false;
+
+            }
+            if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
+              alert("Please enter your correct name") ;//Validation Message
+              return false;
+            }
+            return true;
+          }
+
+          function validatePhone() {
+            var phone = document.getElementById('phone').value;
+            if(phone.length == 0) {
+              alert("Phone number can't be blank") ;//Validation Message
+              return false;
+            }
+
+            if(!phone.match(/^[0]?[789]\d{9}$/)) {
+             alert("Please enter a correct phone number") ;//Validation Message
+             return false;
+           }
+
+           return true;
+
+         }
+
+         function validateEmail () {
+
+          var email = document.getElementById('email').value;
+          if(email.length == 0) {
+            alert("Email can't be blank") ;//Validation Message
+            return false;
+
+          }
+
+          if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+            alert("Please enter a correct email address") ;//Validation Message
+            return false;
+
+          }
+
+          return true;
+
+        }
+
+
+        function validateForm() {
+          if (!validateName() || !validatePhone() || !validateEmail()) {
+
+            alert("Form not submitted");//Validation Message
+            return false;
+          }
+          else {
+            submitted=true;
+            return true;
+          }
+        }
+        </script>
 				</section>
 
 		<!-- Footer -->
